@@ -7,7 +7,7 @@ To build the Linux Docker image:
 
 Run bash in a container from the image:
 
-    docker run -ti --rm -v $PWD:/opt/app-root/src:z bfxmocha/mocha-build-linux bash
+    docker run -ti --rm -u$(id -u):$(id -g) -v $PWD:/opt/app-root/src:z bfxmocha/mocha-build-linux bash
 
 For further instructions see the upstream docs at [centos/devtoolset-7-toolchain-centos7](https://hub.docker.com/r/centos/devtoolset-7-toolchain-centos7/).
 
