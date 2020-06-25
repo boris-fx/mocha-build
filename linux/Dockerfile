@@ -2,7 +2,7 @@ FROM centos/devtoolset-7-toolchain-centos7
 
 USER 0
 RUN yum install -y epel-release https://repo.ius.io/ius-release-el7.rpm \
-        && yum install -y git224 \
+        && yum install -y git224 libxcb-devel mesa-libGL-devel libuuid-devel expat-devel mesa-libGLU-devel libxkbcommon-x11-devel \
         && yum clean all -y
 RUN USER=default && GROUP=default && \
     curl -SsL https://github.com/boxboat/fixuid/releases/download/v0.5/fixuid-0.5-linux-amd64.tar.gz | tar -C /usr/local/bin -xzf - && \
